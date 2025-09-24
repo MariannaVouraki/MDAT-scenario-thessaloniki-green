@@ -8,10 +8,11 @@
 - **Key Fields**: greek_name, scientific_name, total
 
 ## Dataset 2: Population Census
-- **Title**: Μόνιμος Πληθυσμός Δήμου Θεσσαλονίκης (2021) [https://tds.okfn.gr/dataset/207] 
+- **Title**: Μόνιμος Πληθυσμός Δήμου Θεσσαλονίκης (2021)
 - **Description**:Αποτελέσματα της Απογραφής Πληθυσμού-Κατοικιών έτους 2021 που αφορούν στο Μόνιμο Πληθυσμό του Δήμου Θεσσαλονίκης. Τα δεδομένα συλέγχθηκαν απο την ΕΛΣΤΑΤ κατά το έτος 2021. 
-- **Source**: ΕΛΣΤΑΤ (Hellenic Statistical Authority)
+- **Source**: (TDS) Thessaloniki Data Space [https://tds.okfn.gr/dataset/207] 
 - **Format**: Excel (.xlsx)
 - **Key Fields**: Περιγραφή, Μόνιμος πληθυσμός
+
 
 
