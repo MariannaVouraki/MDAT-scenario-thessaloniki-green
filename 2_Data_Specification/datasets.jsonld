@@ -1,0 +1,40 @@
+{
+  "@context": {
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/"
+  },
+  "@graph": [
+    {
+      "@id": "urn:dataset:trees-thessaloniki",
+      "@type": "dcat:Dataset",
+      "dct:title": "Κατηγορίες Δέντρων",
+      "dct:description": "Το dataset περιλαμβάνει λεπτομερή στοιχεία για την αστική δενδροκομία στο Δήμο Θεσσαλονίκης, προσφέροντας πολύτιμες πληροφορίες για τη διαχείριση και την παρακολούθηση των δέντρων στις δημοτικές κοινότητες. Τα δεδομένα προέρχονται από ολοκληρωμένο έργο για τη δημιουργία πρότυπου συστήματος διαχείρισης αστικού πρασίνου και προσαρμογής της πόλης στην κλιματική αλλαγή. Περιεχόμενο του dataset: Πληροφορίες για τα δέντρα ανά δημοτική κοινότητα (Α, Β, Γ, Δ). Στοιχεία για την κατάσταση των δέντρων ανά διαμέρισμα. Κατηγοριοποίηση των δέντρων με βάση το είδος και τα χαρακτηριστικά τους. Στατιστικά στοιχεία για πάρκα και κοινόχρηστους χώρους με δέντρα.",
+      "dct:source": "https://tds.okfn.gr/dataset/37",
+      "dct:identifier": "trees_thessaloniki_2023",
+      "dct:license": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "dct:temporal": "2023",
+      "dcat:distribution": {
+        "@id": "urn:distribution:trees-thessaloniki-xlsx",
+        "@type": "dcat:Distribution",
+        "dcat:mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "dcat:accessURL": "https://tds.okfn.gr/dataset/37"
+      }
+    },
+    {
+      "@id": "urn:dataset:population-thessaloniki-2021",
+      "@type": "dcat:Dataset",
+      "dct:title": "Μόνιμος Πληθυσμός Δήμου Θεσσαλονίκης",
+      "dct:description": "Αποτελέσματα της Απογραφής Πληθυσμού-Κατοικιών έτους 2021 που αφορούν στο Μόνιμο Πληθυσμό του Δήμου Θεσσαλονίκης. Τα δεδομένα συλέγχθηκαν απο την ΕΛΣΤΑΤ κατά το έτος 2021",
+      "dct:source": "https://tds.okfn.gr/dataset/207",
+      "dct:identifier": "population_thessaloniki_2021",
+      "dct:license": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "dct:temporal": "2021",
+      "dcat:distribution": {
+        "@id": "urn:distribution:population-thessaloniki-xlsx",
+        "@type": "dcat:Distribution",
+        "dcat:mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "dcat:accessURL": "https://tds.okfn.gr/dataset/207"
+      }
+    }
+  ]
+}

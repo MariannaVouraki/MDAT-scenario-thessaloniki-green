@@ -1,0 +1,73 @@
+{
+  "@context": [
+    "https://www.w3.org/TR/odrl-model/"
+  ],
+  "@type": "Set",
+  "uid": "urn:policy:dataset-usage",
+  "permission": [
+    {
+      "target": "Dataset_Trees",
+      "assignee": "DataAnalyst",
+      "action": ["use", "derive", "distribute"],
+      "constraint": {
+        "leftOperand": "purpose",
+        "operator": "isAnyOf",
+        "rightOperand": [
+          "https://w3c.github.io/dpv/2.2/dpv/#ResearchAndDevelopment",
+          "https://w3c.github.io/dpv/2.2/dpv/#Policy"
+        ]
+      }
+    },
+    {
+      "target": "Dataset_Population",
+      "assignee": "DataAnalyst",
+      "action": ["use", "derive", "distribute"],
+      "constraint": {
+        "leftOperand": "purpose",
+        "operator": "isAnyOf",
+        "rightOperand": [
+          "https://w3c.github.io/dpv/2.2/dpv/#ResearchAndDevelopment",
+          "https://w3c.github.io/dpv/2.2/dpv/#Policy"
+        ]
+      }
+    },
+    {
+      "target": "Excel_Results",
+      "assignee": "DataAnalyst",
+      "action": ["use", "distribute"],
+      "constraint": {
+        "leftOperand": "purpose",
+        "operator": "isAnyOf",
+        "rightOperand": [
+          "https://w3c.github.io/dpv/2.2/dpv/#ResearchAndDevelopment",
+          "https://w3c.github.io/dpv/2.2/dpv/#PolicyMaking"
+        ]
+      },
+      "duty": {
+        "action": "distribute",
+        "target": "https://tds.okfn.gr/",
+        "assignee": ":DataAnalyst",
+        "optional": true
+      }
+    },
+    {
+      "target": "Graphs",
+      "assignee": "DataAnalyst",
+      "action": ["use", "distribute"],
+      "constraint": {
+        "leftOperand": "purpose",
+        "operator": "isAnyOf",
+        "rightOperand": [
+          "https://w3c.github.io/dpv/2.2/dpv/#ResearchAndDevelopment",
+          "https://w3c.github.io/dpv/2.2/dpv/#PolicyMaking"
+        ]
+      },
+      "duty": {
+        "action": "distribute",
+        "target": "https://tds.okfn.gr/",
+        "assignee": "DataAnalyst",
+        "optional": true
+      }
+    }
+  ]
+}
