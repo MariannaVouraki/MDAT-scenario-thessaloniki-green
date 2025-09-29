@@ -1,2 +1,55 @@
-# MDAT-scenario-thessaloniki-green
-Scenario: Urban Green Indicators for Thessaloniki
+# MDAT Scenario – Thessaloniki Urban Green Indicators
+
+This repository documents the **Urban Green Indicators pilot scenario** for Thessaloniki, including semantic descriptions of datasets and processing operations. The work uses the [Data Privacy Vocabulary (DPV 2.2)](https://w3c.github.io/dpv/2.2/dpv/) and the [ODRL Information Model (2.2)](https://www.w3.org/TR/odrl-model/) to align processes and entities with standard vocabularies.
+
+---
+
+## 📂 Datasets
+
+### 1. Κατηγορίες Δέντρων (Urban Tree Categories)
+- **Source:** [Thessaloniki Data Space](https://tds.okfn.gr/dataset/37)  
+- **Category (DPV):** `dpv:EnvironmentalData`  
+- **Fields:** `greek_name`, `scientific_name`, `total`  
+- **Format:** Excel (.xlsx)  
+- **License:** ODbL 1.0  
+
+### 2. Μόνιμος Πληθυσμός Δήμου Θεσσαλονίκης (Resident Population 2021)
+- **Source:** [Thessaloniki Data Space](https://tds.okfn.gr/dataset/207)  
+- **Category (DPV-PD):** `dpv:DemographicData`  
+- **Fields:** `Περιγραφή`, `Μόνιμος πληθυσμός`  
+- **Format:** Excel (.xlsx)  
+- **License:** ODbL 1.0  
+
+### 3. Derived Data
+- **Excel Results:** `trees_per_citizen.xlsx` → `dpv:DerivedData`  
+- **Graphs (PNG):** Ratio charts → `dpv:VisualisationData`  
+
+---
+
+## ⚙️ Processing Operations
+
+The **Data Analyst** performs the following actions. Each action is described with DPV classes and ODRL actions.
+
+| Step | Description | DPV | ODRL |
+|------|-------------|-----|------|
+| 1 | Extracts permanent population of Thessaloniki | `dpv:Collect`, `dpv-pd:Demographic` | `odrl:use` |
+| 2 | Cleans and filters tree dataset (species names, total counts) | `dpv:Transform` | `odrl:use` |
+| 3 | Calculates urban green indicators (trees per citizen, overall ratio) | `dpv:Derive`, `dpv:Aggregate` | `odrl:derive` |
+| 4 | Produces combined dataset with statistical indicators | `dpv:Derive`, `dpv:Aggregate` | `odrl:derive` |
+| 5 | Generates visualisations (graphs) | `dpv:Store`, `dpv:Use` | `odrl:store`, `odrl:display` |
+
+---
+
+## 🗂 Repository Files
+
+- `urban-green-indicators-processes.jsonld` → Processing operations (DPV + ODRL)  
+- `dpv_processing_entities.jsonld` → Entities (datasets, derived data, roles)  
+- `data-analyst-process-mapping.md` → Human-readable mapping of datasets and processes  
+
+---
+
+## ✅ Notes
+
+- All **processing operations** can be described using existing DPV and ODRL concepts.  
+- No additional **domain-specific ontology** was required for this pilot.  
+- Extension to MDAT-specific terms is possible in future if finer granularity is needed (e.g. `ExtractSubset`, `CleanDataset` refinements).  
