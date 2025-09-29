@@ -42,9 +42,11 @@ The **Data Analyst** performs the following actions. Each action is described wi
 
 ## 🗂 Repository Files
 
-- `urban-green-indicators-processes.jsonld` → Processing operations (DPV + ODRL)  
-- `dpv_processing_entities.jsonld` → Entities (datasets, derived data, roles)  
-- `data-analyst-process-mapping.md` → Human-readable mapping of datasets and processes  
+- `2_Data_Specification/datasets.jsonld` → Semantic description of datasets (DPV + domain-specific concepts)  
+- `2_Data_Specification/datasets.md` → Human-readable description of datasets  
+- `5_Metadata_Policies/entities.jsonld` → Entities (datasets, derived data, roles)  
+- `5_Metadata_Policies/processing_operations.jsonld` → Processing operations (DPV + ODRL)  
+- `5_Metadata_Policies/Urban Green Indicators – Process Mapping.md` → Human-readable mapping of processes  
 
 ---
 
