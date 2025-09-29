@@ -1,0 +1,59 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "dpv": "https://w3id.org/dpv/dpv#",
+    "dpv-pd": "https://w3id.org/dpv/pd#",
+    "odrl": "http://www.w3.org/ns/odrl/2/"
+  },
+  "@id": "#DataAnalystActions",
+  "@type": "dpv:Process",
+  "dct:title": "Data Analyst Actions for Urban Green Indicators",
+  "operation": [
+    {
+      "@id": "#extract_population",
+      "@type": "odrl:Action",
+      "dct:title": "Extract population",
+      "dpv:hasProcessing": "dpv:Collect",
+      "dpv:hasDataCategory": "dpv-pd:Demographic",
+      "odrl:action": "odrl:use",
+      "odrl:target": "#Dataset_Population"
+    },
+    {
+      "@id": "#clean_trees",
+      "@type": "odrl:Action",
+      "dct:title": "Clean and filter tree dataset",
+      "dpv:hasProcessing": "dpv:Transform",
+      "odrl:action": "odrl:use",
+      "odrl:target": "#Dataset_Trees"
+    },
+    {
+      "@id": "#calculate_indicators",
+      "@type": "odrl:Action",
+      "dct:title": "Calculate green indicators",
+      "dpv:hasProcessing": ["dpv:Derive", "dpv:Aggregate"],
+      "dpv:derivedFrom": ["#extract_population", "#clean_trees"],
+      "odrl:action": "odrl:derive",
+      "odrl:target": "#Dataset_Indicators"
+    },
+    {
+      "@id": "#produce_combined_dataset",
+      "@type": "odrl:Action",
+      "dct:title": "Produce combined dataset with indicators",
+      "dpv:hasProcessing": ["dpv:Derive", "dpv:Aggregate"],
+      "dpv:derivedFrom": "#calculate_indicators",
+      "odrl:action": "odrl:derive",
+      "odrl:target": "#Dataset_IndicatorsCombined"
+    },
+    {
+      "@id": "#generate_visualisations",
+      "@type": "odrl:Action",
+      "dct:title": "Generate visualisations",
+      "dpv:hasProcessing": ["dpv:Use", "dpv:Store"],
+      "odrl:action": ["odrl:display", "odrl:store"],
+      "odrl:target": [
+        "#Graphs",
+        "#Excel_Results"
+      ]
+    }
+  ]
+}

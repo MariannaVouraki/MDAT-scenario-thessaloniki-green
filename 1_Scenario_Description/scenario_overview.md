@@ -18,9 +18,10 @@ It combines:
 2. **Data Processing**  
    The Data Analyst:
    - Extracts permanent population of Thessaloniki
-   - Cleans tree dataset (species, counts)
-   - Calculates indicators (trees per citizen, overall ratio)
-   - Generates Excel outputs and graphs
+   - Cleans and filters tree dataset (species names, total counts).
+   - Calculates urban green indicators(trees per citizen, overall ratio).
+   - Produces combined dataset with statistical indicators.
+   - Generates visualisations (graphs).
 3. **Evaluation**  
    The Researcher reviews results, interprets environmental impact, and links findings to policy.
 
