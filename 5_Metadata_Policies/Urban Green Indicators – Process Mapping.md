@@ -74,7 +74,7 @@
 ### 5. Generate visualisations (graphs)
 - **Περιγραφή:** Δημιουργία και αποθήκευση γραφημάτων (PNG) με δείκτες πρασίνου (ανά είδος, συνολικά).  
 - **DPV:** `dpv:Use`, `dpv:Store`  
-- **ODRL:** `odrl:display`, `odrl:store`  
+- **ODRL:** `odrl:display`, `odrl:reproduce`  
 - **Input:** `#produce_combined_dataset`  
 - **Outputs:**  
   - `file:trees_per_citizen.png`  

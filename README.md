@@ -36,7 +36,7 @@ The **Data Analyst** performs the following actions. Each action is described wi
 | 2 | Cleans and filters tree dataset (species names, total counts) | `dpv:Transform` | `odrl:use` |
 | 3 | Calculates urban green indicators (trees per citizen, overall ratio) | `dpv:Derive`, `dpv:Aggregate` | `odrl:derive` |
 | 4 | Produces combined dataset with statistical indicators | `dpv:Derive`, `dpv:Aggregate` | `odrl:derive` |
-| 5 | Generates visualisations (graphs) | `dpv:Store`, `dpv:Use` | `odrl:store`, `odrl:display` |
+| 5 | Generates visualisations (graphs) | `dpv:Store`, `dpv:Use` | `odrl:reproduce`, `odrl:display` |
 
 ---
 
