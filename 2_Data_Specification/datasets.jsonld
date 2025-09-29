@@ -14,7 +14,7 @@
       "dct:source": "https://tds.okfn.gr/dataset/37",
       "dpv:hasCategory": "dpv:EnvironmentalData",
       "dpv:hasSensitivity": "dpv:NonPersonalData",
-      "mdat:domainConcepts": ["mdat:TreeGreekName", "mdat:TreeCategory"],
+      "mdat:domainConcepts": ["mdat:UrbanTree", "mdat:TreeCategory"],
       "mdat:keyProperties": ["greek_name", "scientific_name", "total"]
     },
     {

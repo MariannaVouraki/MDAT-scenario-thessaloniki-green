@@ -6,17 +6,17 @@ This repository documents the **Urban Green Indicators pilot scenario** for Thes
 
 ## 📂 Datasets
 
-### 1. Κατηγορίες Δέντρων (Urban Tree Categories)
+### 1. Urban Tree Categories (Κατηγορίες Δέντρων)
 - **Source:** [Thessaloniki Data Space](https://tds.okfn.gr/dataset/37)  
 - **Category (DPV):** `dpv:EnvironmentalData`  
 - **Fields:** `greek_name`, `scientific_name`, `total`  
 - **Format:** Excel (.xlsx)  
 - **License:** ODbL 1.0  
 
-### 2. Μόνιμος Πληθυσμός Δήμου Θεσσαλονίκης (Resident Population 2021)
+### 2. Resident Population of Thessaloniki Municipality (2021) (Μόνιμος Πληθυσμός Δήμου Θεσσαλονίκης)
 - **Source:** [Thessaloniki Data Space](https://tds.okfn.gr/dataset/207)  
 - **Category (DPV-PD):** `dpv:DemographicData`  
-- **Fields:** `Περιγραφή`, `Μόνιμος πληθυσμός`  
+- **Fields:** `Περιγραφή` (Description), `Μόνιμος πληθυσμός` (Permanent Population)  
 - **Format:** Excel (.xlsx)  
 - **License:** ODbL 1.0  
 
@@ -49,20 +49,21 @@ The **Data Analyst** performs the following actions. Each action is described wi
 - `5_Metadata_Policies/Urban Green Indicators – Process Mapping.md` → Human-readable mapping of processes  
 
 ---
+
 ## 🌱 Domain-Specific Concepts (MDAT)
 
-Στο σενάριο χρησιμοποιήθηκαν επιπλέον domain-specific έννοιες (namespace: `mdat:`) για να εξειδικεύσουν τα datasets και τα πεδία τους, πέρα από τα γενικά DPV/ODRL terms.
+Additional domain-specific concepts (namespace: `mdat:`) were introduced to specialize the datasets and their properties beyond the generic DPV/ODRL terms.
 
-| Στοιχείο | Περιγραφή | MDAT Concept |
-|----------|------------|--------------|
-| **Urban Tree** | Αναπαριστά αστικό δέντρο ως μονάδα δεδομένων | `mdat:UrbanTree` |
-| **Tree Category** | Κατηγοριοποίηση δέντρων ανά είδος | `mdat:TreeCategory` |
-| **Population Count** | Συνολικός πληθυσμός Δήμου | `mdat:PopulationCount` |
-
+| Element | Description | MDAT Concept |
+|----------|-------------|--------------|
+| **Urban Tree** | Represents an urban tree as a data unit | `mdat:UrbanTree` |
+| **Tree Category** | Categorisation of trees by species | `mdat:TreeCategory` |
+| **Population Count** | Total permanent population of the Municipality | `mdat:PopulationCount` |
 
 ---
+
 ## ✅ Notes
 
 - All **processing operations** can be described using existing DPV and ODRL concepts.  
-- No additional **domain-specific ontology** was required for this pilot.  
-- Extension to MDAT-specific terms is possible in future if finer granularity is needed (e.g. `ExtractSubset`, `CleanDataset` refinements).  
+- Additional **domain-specific ontology** was only introduced for dataset semantics where DPV/ODRL were too general.  
+- Extension to MDAT-specific terms is possible in the future if finer granularity is needed (e.g. `ExtractSubset`, `CleanDataset` refinements).  
