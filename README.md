@@ -49,7 +49,18 @@ The **Data Analyst** performs the following actions. Each action is described wi
 - `5_Metadata_Policies/Urban Green Indicators – Process Mapping.md` → Human-readable mapping of processes  
 
 ---
+## 🌱 Domain-Specific Concepts (MDAT)
 
+Στο σενάριο χρησιμοποιήθηκαν επιπλέον domain-specific έννοιες (namespace: `mdat:`) για να εξειδικεύσουν τα datasets και τα πεδία τους, πέρα από τα γενικά DPV/ODRL terms.
+
+| Στοιχείο | Περιγραφή | MDAT Concept |
+|----------|------------|--------------|
+| **Urban Tree** | Αναπαριστά αστικό δέντρο ως μονάδα δεδομένων | `mdat:UrbanTree` |
+| **Tree Category** | Κατηγοριοποίηση δέντρων ανά είδος | `mdat:TreeCategory` |
+| **Population Count** | Συνολικός πληθυσμός Δήμου | `mdat:PopulationCount` |
+
+
+---
 ## ✅ Notes
 
 - All **processing operations** can be described using existing DPV and ODRL concepts.  
