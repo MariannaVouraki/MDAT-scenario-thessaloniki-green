@@ -6,7 +6,7 @@
     {
       "@id": "#Dataset_Trees",
       "@type": "dpv:Dataset",
-      "dpv:hasName": "Κατηγορίες Δέντρων",
+      "dpv:hasName": "Tree Categories",
       "dpv:hasCategory": "dpv:EnvironmentalData",
       "dpv:hasDataSource": "https://tds.okfn.gr/dataset/37",
       "dpv:hasLicense": "https://opendatacommons.org/licenses/odbl/1-0/",
@@ -15,7 +15,7 @@
     {
       "@id": "#Dataset_Population",
       "@type": "dpv:Dataset",
-      "dpv:hasName": "Μόνιμος Πληθυσμός Δήμου Θεσσαλονίκης",
+      "dpv:hasName": "Permanent Population of the Municipality of Thessaloniki",
       "dpv:hasCategory": "dpv:DemographicData",
       "dpv:hasDataSource": "https://tds.okfn.gr/dataset/207",
       "dpv:hasLicense": "https://opendatacommons.org/licenses/odbl/1-0/",

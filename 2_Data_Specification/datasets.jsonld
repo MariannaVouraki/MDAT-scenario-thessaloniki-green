@@ -8,8 +8,8 @@
     {
       "@id": "mdat:Dataset_Trees",
       "@type": "dpv:Dataset",
-      "dct:title": "Κατηγορίες Δέντρων",
-      "dct:description": "Περιλαμβάνει λεπτομερή στοιχεία για την αστική δενδροκομία στο Δήμο Θεσσαλονίκης, με πληροφορίες για τα δέντρα ανά δημοτική κοινότητα, κατάσταση, είδος και στατιστικά πάρκων.",
+      "dct:title": "Tree Categories",
+      "dct:description": "Includes detailed data about urban forestry in the Municipality of Thessaloniki, with information on trees by municipal community, condition, species, and park statistics.",
       "dct:format": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
       "dct:source": "https://tds.okfn.gr/dataset/37",
       "dpv:hasCategory": "dpv:EnvironmentalData",
@@ -20,14 +20,14 @@
     {
       "@id": "mdat:Dataset_Population",
       "@type": "dpv:Dataset",
-      "dct:title": "Μόνιμος Πληθυσμός Δήμου Θεσσαλονίκης (2021)",
-      "dct:description": "Αποτελέσματα της Απογραφής Πληθυσμού-Κατοικιών 2021 για το Δήμο Θεσσαλονίκης.",
+      "dct:title": "Permanent Population of the Municipality of Thessaloniki (2021)",
+      "dct:description": "Results of the 2021 Population and Housing Census for the Municipality of Thessaloniki.",
       "dct:format": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
       "dct:source": "https://tds.okfn.gr/dataset/207",
       "dpv:hasCategory": "dpv:DemographicData",
       "dpv:hasSensitivity": "dpv:NonPersonalData",
       "mdat:domainConcepts": "mdat:PopulationCount",
-      "mdat:keyProperties": ["Περιγραφή", "Μόνιμος πληθυσμός"]
+      "mdat:keyProperties": ["Description", "Permanent population"]
     }
   ]
 }
