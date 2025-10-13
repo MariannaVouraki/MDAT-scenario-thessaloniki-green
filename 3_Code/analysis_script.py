@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import os
 
 # === File paths ===
-trees_file = "data/Κατηγορίες Δέντρων.xlsx"
-population_file = "data/Μόνιμος Πληθυσμός Δήμου Θεσσαλονίκης.xlsx"
+trees_file = "data/Urban Tree Categories.xlsx"
+population_file = "data/Permanent Population of the Municipality of Thessaloniki.xlsx"
 output_file = "4_Outputs/trees_per_citizen.xlsx"
 
 # === Step 1: Load data ===

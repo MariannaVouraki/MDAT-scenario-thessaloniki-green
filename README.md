@@ -13,7 +13,7 @@ This repository documents the **Urban Green Indicators pilot scenario** for Thes
 - **Format:** Excel (.xlsx)  
 - **License:** ODbL 1.0  
 
-### 2. Resident Population of Thessaloniki Municipality (2021) (Μόνιμος Πληθυσμός Δήμου Θεσσαλονίκης)
+### 2. Permanent Population of the Municipality of Thessaloniki (2021) (Μόνιμος Πληθυσμός Δήμου Θεσσαλονίκης)
 - **Source:** [Thessaloniki Data Space](https://tds.okfn.gr/dataset/207)  
 - **Category (DPV-PD):** `dpv:DemographicData`  
 - **Fields:** `Περιγραφή` (Description), `Μόνιμος πληθυσμός` (Permanent Population)  

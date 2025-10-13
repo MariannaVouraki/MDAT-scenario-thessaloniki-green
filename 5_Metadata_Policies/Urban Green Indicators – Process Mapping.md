@@ -1,89 +1,89 @@
 # Urban Green Indicators – Data Analyst Documentation
 
-Αυτό το έγγραφο περιγράφει τα datasets και τις διαδικασίες που χρησιμοποιούνται στο σενάριο *Urban Green Indicators for Thessaloniki*.  
-Οι διαδικασίες αντιστοιχίζονται σε έννοιες από τα λεξιλόγια **DPV 2.2** και **ODRL 2.2**.
+This document describes the datasets and processes used in the *Urban Green Indicators for Thessaloniki* scenario.  
+The processes are mapped to concepts from the **DPV 2.2** and **ODRL 2.2** vocabularies.
 
 ---
 
 ## Datasets
 
-### 1. Κατηγορίες Δέντρων (Urban Tree Categories)
-- **Τίτλος (GR):** Κατηγορίες Δέντρων  
-- **Τίτλος (EN):** Urban Tree Categories  
-- **Περιγραφή:** Το dataset περιλαμβάνει λεπτομερή στοιχεία για την αστική δενδροκομία στο Δήμο Θεσσαλονίκης, με πληροφορίες για τα δέντρα ανά δημοτική κοινότητα, την κατάστασή τους, την κατηγοριοποίηση κατά είδος, καθώς και στατιστικά στοιχεία για πάρκα και κοινόχρηστους χώρους.  
-- **Πεδία:** `greek_name`, `scientific_name`, `total`  
-- **Μορφή:** Excel (.xlsx)  
-- **Πηγή:** Thessaloniki Data Space – [Κατηγορίες Δέντρων](https://tds.okfn.gr/dataset/37)  
+### 1. Urban Tree Categories
+- **Title (GR):** Κατηγορίες Δέντρων  
+- **Title (EN):** Urban Tree Categories  
+- **Description:** The dataset includes detailed information on urban forestry in the Municipality of Thessaloniki, providing data about trees by municipal community, their condition, species classification, and statistical information about parks and public green spaces.  
+- **Fields:** `greek_name`, `scientific_name`, `total`  
+- **Format:** Excel (.xlsx)  
+- **Source:** Thessaloniki Data Space – [Urban Tree Categories](https://tds.okfn.gr/dataset/37)  
 
 ---
 
-### 2. Μόνιμος Πληθυσμός Δήμου Θεσσαλονίκης (Resident Population 2021)
-- **Τίτλος (GR):** Μόνιμος Πληθυσμός Δήμου Θεσσαλονίκης (2021)  
-- **Τίτλος (EN):** Resident Population of the Municipality of Thessaloniki (2021)  
-- **Περιγραφή:** Αποτελέσματα της Απογραφής Πληθυσμού-Κατοικιών 2021 (ΕΛΣΤΑΤ), που αφορούν τον μόνιμο πληθυσμό του Δήμου Θεσσαλονίκης.  
-- **Πεδία:** `Περιγραφή`, `Μόνιμος πληθυσμός`  
-- **Μορφή:** Excel (.xlsx)  
-- **Πηγή:** Thessaloniki Data Space – [Μόνιμος Πληθυσμός 2021](https://tds.okfn.gr/dataset/207)  
+### 2. Resident Population of the Municipality of Thessaloniki (2021)
+- **Title (GR):** Μόνιμος Πληθυσμός Δήμου Θεσσαλονίκης (2021)  
+- **Title (EN):** Resident Population of the Municipality of Thessaloniki (2021)  
+- **Description:** Results of the 2021 Population and Housing Census (ELSTAT) referring to the permanent population of the Municipality of Thessaloniki.  
+- **Fields:** `Description`, `Permanent population`  
+- **Format:** Excel (.xlsx)  
+- **Source:** Thessaloniki Data Space – [Resident Population 2021](https://tds.okfn.gr/dataset/207)  
 
 ---
 
 ## Data Analyst Process Mapping
 
-Οι κύριες ενέργειες που εκτελεί ο **Data Analyst** και οι αντιστοιχίσεις τους σε DPV/ODRL:
+The main activities performed by the **Data Analyst** and their mappings to DPV/ODRL concepts are as follows:
 
 ---
 
 ### 1. Extract permanent population of Thessaloniki
-- **Περιγραφή:** Ανάκτηση της τιμής μόνιμου πληθυσμού για τον Δήμο Θεσσαλονίκης από το dataset.  
+- **Description:** Retrieve the permanent population value for the Municipality of Thessaloniki from the dataset.  
 - **DPV:** `dpv:Collect`  
 - **ODRL:** `odrl:use`  
 - **Input dataset:** `dataset:population2021`  
-- **Output:** Τιμή πληθυσμού (`dpv-pd:Demographic`)
+- **Output:** Population value (`dpv-pd:Demographic`)
 
 ---
 
 ### 2. Clean and filter tree dataset
-- **Περιγραφή:** Επιλογή πεδίων (greek_name, scientific_name, total), φιλτράρισμα και τυποποίηση αριθμών.  
+- **Description:** Select fields (`greek_name`, `scientific_name`, `total`), filter data, and normalize numeric values.  
 - **DPV:** `dpv:Transform`  
 - **ODRL:** `odrl:use`  
 - **Input dataset:** `dataset:trees`  
-- **Output:** Καθαρισμένο dataset δέντρων
+- **Output:** Cleaned tree dataset  
 
 ---
 
 ### 3. Calculate urban green indicators
-- **Περιγραφή:** Υπολογισμός δεικτών όπως δέντρα ανά κάτοικο και συνολικός δείκτης πρασίνου.  
+- **Description:** Calculate indicators such as trees per resident and total green index.  
 - **DPV:** `dpv:Derive`, `dpv:Aggregate`  
 - **ODRL:** `odrl:derive`  
 - **Inputs:**  
   - `#extract_population` (population value)  
   - `#clean_trees` (cleaned dataset)  
-- **Output:** `dataset:indicators` (πίνακας δεικτών)
+- **Output:** `dataset:indicators` (indicator table)  
 
 ---
 
 ### 4. Produce combined dataset with indicators
-- **Περιγραφή:** Συνδυασμός στατιστικών δεικτών σε ολοκληρωμένο dataset με όλα τα αποτελέσματα.  
+- **Description:** Combine statistical indicators into a complete dataset containing all results.  
 - **DPV:** `dpv:Derive`, `dpv:Aggregate`  
 - **ODRL:** `odrl:derive`  
 - **Input:** `#calculate_indicators`  
-- **Output:** `dataset:indicators_combined`
+- **Output:** `dataset:indicators_combined`  
 
 ---
 
 ### 5. Generate visualisations (graphs)
-- **Περιγραφή:** Δημιουργία και αποθήκευση γραφημάτων (PNG) με δείκτες πρασίνου (ανά είδος, συνολικά).  
+- **Description:** Create and store graphs (PNG) visualizing green indicators (by species, per resident, overall).  
 - **DPV:** `dpv:Use`, `dpv:Store`  
 - **ODRL:** `odrl:display`, `odrl:reproduce`  
 - **Input:** `#produce_combined_dataset`  
 - **Outputs:**  
   - `file:trees_per_citizen.png`  
   - `file:trees_per_species.png`  
-  - `file:trees_overall.png`
+  - `file:trees_overall.png`  
 
 ---
 
-## Συνοπτική ροή διαδικασίας
+## Summary of Process Flow
 1. **Extract population** →  
 2. **Clean trees dataset** →  
 3. **Calculate indicators** →  
