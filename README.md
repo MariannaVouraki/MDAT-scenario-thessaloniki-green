@@ -64,6 +64,34 @@ Additional domain-specific concepts (namespace: `mdat:`) were introduced to spec
 | **Calculate Indicator** | Operation deriving new data through mathematical or statistical computation | `mdat:CalculateIndicator` |
 
 ---
+# Ontology Mapping — Thessaloniki Urban Green Indicators
+
+This table provides a **unified** mapping of **roles**, **actions**, and **data types** used in the Urban Green Indicators Scenario.  
+It aligns each element with DPV, ODRL, and custom MDAT concepts.
+
+| Element / Description | DPV Term | ODRL Term | Proposed Custom Term (mdat:) | Notes / Usage |
+|------------------------|----------|------------|-------------------------------|----------------|
+| **Role** |||||
+| Data Provider | `dpv:DataSource`, `dpv:DataController` | — | — | Entity responsible for providing datasets. |
+| Data Analyst | `dpv:DataProcessor` | — | — | Performs technical data processing and derivation. |
+| Researcher | `dpv:Recipient`, `dpv:DataUser` | — | — | Uses derived results for research and decision-making. |
+| **Action** |||||
+| Load datasets | `dpv:Collect` | `odrl:use` | — | Standard data collection activity. |
+| Extract subset | `dpv:Transform` | `odrl:use` | `mdat:ExtractSubset` | Select specific records/rows matching criteria. |
+| Select columns | `dpv:Transform` | `odrl:use` | `mdat:SelectColumns` | Choose subset of dataset attributes. |
+| Calculate indicators | `dpv:Derive` | `odrl:derive` | `mdat:CalculateIndicator` | Derive new data through mathematical or statistical operations. |
+| Aggregate totals | `dpv:Aggregate` | `odrl:derive` | — | Combine data into summary statistics. |
+| Store derived dataset | `dpv:Store` | `odrl:reproduce` | — | Persist data as file or record. |
+| Generate visualisations | `dpv:Visualise`, `dpv:Use` | `odrl:display`, `odrl:reproduce` | — | Produce and share visual representations of results. |
+| Evaluate / interpret | `dpv:Analyse`, `dpv:Assess` | `odrl:use` | — | Review and interpret analytical outputs. |
+| **Data Type** |||||
+| Population dataset | `dpv:DemographicData` | — | — | Census or resident population data. |
+| Tree dataset | `dpv:EnvironmentalData` | — | — | Environmental/urban vegetation data. |
+| Derived dataset | `dpv:DerivedData`, `dpv:StatisticalData` | — | — | Resulting integrated dataset with calculated indicators. |
+| Graphs / visual outputs | `dpv:VisualisationData` | — | — | Images, charts, or dashboards for presentation. |
+| Urban tree | — | — | `mdat:UrbanTree` | Represents individual tree species entry. |
+| Tree category | — | — | `mdat:TreeCategory` | Classification or grouping of trees. |
+| Population count | — | — | `mdat:PopulationCount` | Numeric total of residents used for indicator calculation. |
 
 ## ✅ Notes
 
