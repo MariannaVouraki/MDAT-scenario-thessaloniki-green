@@ -59,6 +59,9 @@ Additional domain-specific concepts (namespace: `mdat:`) were introduced to spec
 | **Urban Tree** | Represents an urban tree as a data unit | `mdat:UrbanTree` |
 | **Tree Category** | Categorisation of trees by species | `mdat:TreeCategory` |
 | **Population Count** | Total permanent population of the Municipality | `mdat:PopulationCount` |
+| **Extract Subset** | Operation selecting relevant records or rows from a dataset | `mdat:ExtractSubset` |
+| **Select Columns** | Operation selecting specific dataset attributes | `mdat:SelectColumns` |
+| **Calculate Indicator** | Operation deriving new data through mathematical or statistical computation | `mdat:CalculateIndicator` |
 
 ---
 
