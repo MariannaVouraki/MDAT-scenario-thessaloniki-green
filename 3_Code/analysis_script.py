@@ -7,7 +7,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-# ========= Paths με βάση τη δομή σου =========
 # Το script είναι στο 3_Code/, άρα root = γονικός φάκελος
 ROOT = Path(__file__).resolve().parent.parent
 
