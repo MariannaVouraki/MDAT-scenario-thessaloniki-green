@@ -46,21 +46,33 @@ def GenerateGraphsAndVisualSummaries(results: dict, output_excel_path: str | Pat
     # --- Graph 1: trees per citizen (by species)
     trees_sorted = per_species.sort_values("trees_per_citizen", ascending=False)
     img1 = OUTPUT_DIR / f"{stem}_per_species.png"
+
     plt.figure(figsize=(10, 8))
     plt.barh(trees_sorted["greek_name"], trees_sorted["trees_per_citizen"])
+    plt.xlabel("Δέντρα ανά κάτοικο", fontsize=11)
+    plt.ylabel("Είδος δέντρου (ελληνικά)", fontsize=11)
+    plt.title("Αναλογία δέντρων ανά κάτοικο (ανά είδος)", fontsize=13)
+    plt.xticks(fontsize=9)
+    plt.yticks(fontsize=6)
     plt.gca().invert_yaxis()
-    plt.title("Δέντρα ανά κάτοικο (ανά είδος)")
     plt.tight_layout()
     plt.savefig(img1, dpi=300)
     plt.close()
 
+
     # --- Graph 2: overall (summary row) + species
     trees_with_total = pd.concat([summary_row, trees_sorted], ignore_index=True)
     img2 = OUTPUT_DIR / f"{stem}_overall_with_species.png"
+
     plt.figure(figsize=(10, 8))
-    plt.barh(trees_with_total["greek_name"], trees_with_total["trees_per_citizen"])
+    colors = ["darkgreen"] + ["steelblue"] * len(trees_sorted)
+    plt.barh(trees_with_total["greek_name"], trees_with_total["trees_per_citizen"], color=colors)
+    plt.xlabel("Δέντρα ανά κάτοικο", fontsize=11)
+    plt.ylabel("Είδος δέντρου (ελληνικά)", fontsize=11)
+    plt.title("Συνολική και αναλυτική αναλογία δέντρων ανά κάτοικο", fontsize=13)
+    plt.xticks(fontsize=9)
+    plt.yticks(fontsize=7)
     plt.gca().invert_yaxis()
-    plt.title("Συνολική και αναλυτική αναλογία δέντρων ανά κάτοικο")
     plt.tight_layout()
     plt.savefig(img2, dpi=300)
     plt.close()
@@ -68,10 +80,15 @@ def GenerateGraphsAndVisualSummaries(results: dict, output_excel_path: str | Pat
     # --- Graph 3: absolute totals per species
     trees_sorted_total = per_species.sort_values("total", ascending=False)
     img3 = OUTPUT_DIR / f"{stem}_total_per_species.png"
+
     plt.figure(figsize=(10, 8))
-    plt.barh(trees_sorted_total["greek_name"], trees_sorted_total["total"])
+    plt.barh(trees_sorted_total["greek_name"], trees_sorted_total["total"], color="forestgreen")
+    plt.xlabel("Πλήθος δέντρων", fontsize=11)
+    plt.ylabel("Είδος δέντρου (ελληνικά)", fontsize=11)
+    plt.title("Συνολικό πλήθος δέντρων ανά είδος", fontsize=13)
+    plt.xticks(fontsize=9)
+    plt.yticks(fontsize=7)
     plt.gca().invert_yaxis()
-    plt.title("Συνολικό πλήθος δέντρων ανά είδος")
     plt.tight_layout()
     plt.savefig(img3, dpi=300)
     plt.close()
